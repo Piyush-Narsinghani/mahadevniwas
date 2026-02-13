@@ -2,173 +2,113 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mahadev Niwas Homestay | Direct Booking in Varanasi</title>
+<title>Mahadev Niwas Homestay Varanasi | Family Stay Near Kashi Vishwanath</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="description" content="Direct booking homestay in Varanasi near Kashi Vishwanath. Clean AC rooms, kitchen, peaceful area, family friendly, scooty rental help & local guidance. Book Mahadev Niwas now.">
+<meta name="description"
+content="Mahadev Niwas Homestay Varanasi offers peaceful AC rooms for families visiting Kashi Vishwanath Temple & Ganga Aarti. Ground floor stay with kitchen, WiFi & host support. Book direct for best price.">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="images/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Poppins,sans-serif;background:#f6f7fb;color:#222}
+body{font-family:Poppins,sans-serif;background:#f5f6fa;color:#222}
+.container{width:92%;max-width:1200px;margin:auto}
 
-/* HEADER */
 header{
-position:sticky;
-top:0;
-background:white;
-box-shadow:0 3px 10px rgba(0,0,0,.08);
-z-index:999;
+position:sticky;top:0;background:#fff;
+box-shadow:0 4px 12px rgba(0,0,0,.05);
+z-index:10;
 }
 .nav{
-max-width:1200px;
-margin:auto;
-padding:14px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+display:flex;justify-content:space-between;
+align-items:center;padding:14px 0;
 }
-.logo{font-weight:700;font-size:1.2rem}
-.logo span{color:#ff385c}
-.book-btn{
-background:#25D366;
-color:white;
-padding:10px 18px;
-border-radius:30px;
-font-weight:600;
-text-decoration:none;
+.logo{font-weight:700;font-size:1.3rem}
+.btn{
+background:#ff385c;color:#fff;
+padding:10px 18px;border-radius:999px;
+text-decoration:none;font-size:.9rem;
+display:inline-block
 }
 
-/* HERO */
+section{padding:60px 0}
+
+h1,h2{margin-bottom:14px}
+p{color:#666;margin-bottom:10px}
+
 .hero{
+background:url("images/ganga-aarti.jpg") center/cover;
+color:#fff;text-align:center;padding:120px 20px;
 position:relative;
-height:85vh;
 }
-.hero img{
-width:100%;
-height:100%;
-object-fit:cover;
-filter:brightness(.55);
+.hero::before{
+content:"";position:absolute;inset:0;
+background:rgba(0,0,0,.5)
 }
-.hero-content{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-text-align:center;
-color:white;
-max-width:900px;
-width:90%;
-}
-.hero h1{font-size:2.7rem;margin-bottom:12px}
-.hero p{margin-bottom:20px;font-size:1.1rem}
-.hero-btn{
-background:white;
-color:black;
-padding:12px 26px;
-border-radius:40px;
-font-weight:600;
-display:inline-block;
-margin:5px;
-}
+.hero-content{position:relative;max-width:700px;margin:auto}
+.hero h1{font-size:2.4rem}
+.hero p{color:#ddd}
 
-/* SECTIONS */
-section{padding:70px 20px}
-.container{max-width:1150px;margin:auto}
-h2{text-align:center;margin-bottom:40px;font-size:2rem}
-
-/* TRUST BAR */
-.trust{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,.05);
-}
-.trust div{font-weight:500}
-
-/* FEATURES */
-.features{
+.rooms-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;margin-top:30px
 }
-.feature{
-background:white;
-padding:25px;
-border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,.06);
-text-align:center;
+.room-card{
+background:#fff;border-radius:18px;
+padding:18px;
+box-shadow:0 8px 20px rgba(0,0,0,.05);
+display:flex;flex-direction:column
+}
+.room-card img{
+width:100%;height:210px;
+object-fit:cover;border-radius:14px;
+margin-bottom:12px
+}
+.room-card h3{margin:6px 0}
+.room-card p{font-size:.95rem}
+.room-card a{margin-top:auto}
+
+.amenities{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:14px;margin-top:20px
+}
+.amenities div{
+background:#fff;padding:14px;border-radius:12px;
+box-shadow:0 6px 16px rgba(0,0,0,.05)
 }
 
-/* ROOMS */
-.rooms{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:22px;
+.booster{
+background:#fff;border-radius:16px;
+padding:30px;box-shadow:0 10px 25px rgba(0,0,0,.05)
 }
-.room{
-background:white;
-border-radius:16px;
-overflow:hidden;
-box-shadow:0 12px 30px rgba(0,0,0,.08);
-}
-.room img{width:100%;height:210px;object-fit:cover}
-.room-content{padding:18px}
-.room a{
-display:inline-block;
-margin-top:12px;
-background:#ff385c;
-color:white;
-padding:8px 16px;
-border-radius:25px;
-}
+.booster ul{margin-top:10px}
+.booster li{margin:8px 0;color:#555}
 
-/* REVIEWS */
-.reviews{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
 .review{
-background:white;
-padding:22px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,.05);
+background:#fff;padding:18px;
+border-radius:14px;
+box-shadow:0 6px 18px rgba(0,0,0,.05)
 }
 
-/* CTA */
-.cta{
-background:#111827;
-color:white;
-text-align:center;
-padding:60px 20px;
+.contact{
+display:grid;grid-template-columns:1fr 1fr;
+gap:20px
 }
-.cta a{
-background:#25D366;
-color:white;
-padding:14px 28px;
-border-radius:40px;
-display:inline-block;
-margin-top:20px;
-font-weight:600;
-}
+iframe{width:100%;border:0;border-radius:14px;height:300px}
 
-/* FOOTER */
 footer{
-padding:40px;
-text-align:center;
-color:#666;
+text-align:center;padding:25px;
+background:#fff;margin-top:40px;
+border-top:1px solid #eee
 }
 
-/* MOBILE */
-@media(max-width:768px){
-.hero h1{font-size:1.9rem}
-.hero{height:70vh}
+@media(max-width:800px){
+.contact{grid-template-columns:1fr}
+.hero h1{font-size:1.8rem}
 }
 </style>
 </head>
@@ -176,144 +116,156 @@ color:#666;
 <body>
 
 <header>
-<div class="nav">
-<div class="logo">Mahadev <span>Niwas</span></div>
-<a class="book-btn" href="https://wa.me/919876954987" target="_blank">Book on WhatsApp</a>
+<div class="container nav">
+<div class="logo">Mahadev Niwas</div>
+<a class="btn" target="_blank"
+href="https://wa.me/919876954987">Book on WhatsApp</a>
 </div>
 </header>
 
-<!-- HERO -->
-<div class="hero">
-<img src="images/ganga-aarti.jpg">
+<section class="hero">
 <div class="hero-content">
-<h1>Peaceful Stay for Kashi Darshan</h1>
-<p>Clean AC rooms • Kitchen inside rooms • Ground floor • Family friendly</p>
-
-<a class="hero-btn" href="https://wa.me/919876954987" target="_blank">Check Availability</a>
-<a class="hero-btn" href="#rooms">View Rooms</a>
-
-<p style="margin-top:15px;">⭐ 4.9 Rating | 100+ Happy Guests</p>
-</div>
-</div>
-
-<!-- TRUST -->
-<section>
-<div class="container">
-<div class="trust">
-<div>✔ Ground Floor – Easy for elders</div>
-<div>✔ Peaceful locality</div>
-<div>✔ Direct host support</div>
-<div>✔ Budget friendly vs hotels</div>
-</div>
+<h1>Your Peaceful Stay in Varanasi</h1>
+<p>Family-friendly homestay 15–20 minutes from Kashi Vishwanath & Ghats.</p>
+<br>
+<a class="btn" target="_blank"
+href="https://wa.me/919876954987">Check Availability</a>
 </div>
 </section>
 
-<!-- FEATURES -->
 <section>
 <div class="container">
-<h2>Why Guests Choose Mahadev Niwas</h2>
-<div class="features">
-<div class="feature">Personal guidance for temples & travel</div>
-<div class="feature">Kitchen inside rooms</div>
-<div class="feature">Scooty rental help</div>
-<div class="feature">Free milk, tea & sugar available</div>
-<div class="feature">Fast WiFi & hot water</div>
-<div class="feature">Safe residential area</div>
-</div>
-</div>
-</section>
+<h2>Our Rooms</h2>
 
-<!-- ROOMS -->
-<section id="rooms" style="background:#fafafa">
-<div class="container">
-<h2>Available Rooms</h2>
+<div class="rooms-grid">
 
-<div class="rooms">
-
-<div class="room">
+<div class="room-card">
 <img src="images/mn1.jpeg">
-<div class="room-content">
 <h3>Listing 1</h3>
-<p>Cozy room for solo & couples.</p>
-<a href="https://www.airbnb.co.uk/h/mahadevniwas1">View Room</a>
-</div>
+<p>Cozy room ideal for solo or couple stay.</p>
+<a class="btn" target="_blank"
+href="https://www.airbnb.co.uk/h/mahadevniwas1">View Listing</a>
 </div>
 
-<div class="room">
+<div class="room-card">
 <img src="images/mn2.jpeg">
-<div class="room-content">
 <h3>Listing 2</h3>
-<p>Comfortable stay for families.</p>
-<a href="https://www.airbnb.co.uk/h/mahadevniwas2">View Room</a>
-</div>
+<p>Comfortable room for 2–3 guests.</p>
+<a class="btn" target="_blank"
+href="https://www.airbnb.co.uk/h/mahadevniwas2">View Listing</a>
 </div>
 
-<div class="room">
+<div class="room-card">
 <img src="images/mn3.jpeg">
-<div class="room-content">
-<h3>Projector Room</h3>
-<p>Family room with projector entertainment.</p>
-<a href="https://www.airbnb.co.uk/h/mahadevniwas3">View Room</a>
-</div>
+<h3>Listing 3</h3>
+<p>4-person room with projector & OTT.</p>
+<a class="btn" target="_blank"
+href="https://www.airbnb.co.uk/h/mahadevniwas3">View Listing</a>
 </div>
 
-<div class="room">
+<div class="room-card">
 <img src="images/mn4.jpeg">
-<div class="room-content">
 <h3>Listing 4</h3>
-<p>Comfortable group room.</p>
-<a href="https://www.airbnb.co.uk/h/mahadevniwas4">View Room</a>
-</div>
+<p>Peaceful room for small groups.</p>
+<a class="btn" target="_blank"
+href="https://www.airbnb.co.uk/h/mahadevniwas4">View Listing</a>
 </div>
 
-<div class="room">
+<div class="room-card">
 <img src="images/mn5.jpeg">
-<div class="room-content">
 <h3>Listing 5</h3>
-<p>Peaceful family stay.</p>
-<a href="https://www.airbnb.co.uk/h/mahadevniwas5">View Room</a>
-</div>
+<p>Simple stay for families & pilgrims.</p>
+<a class="btn" target="_blank"
+href="https://www.airbnb.co.uk/h/mahadevniwas5">View Listing</a>
 </div>
 
-<div class="room">
+<div class="room-card">
 <img src="images/mn6.jpeg">
-<div class="room-content">
 <h3>Listing 6</h3>
-<p>Best for longer stays.</p>
-<a href="https://www.airbnb.co.uk/h/mahadevniwas6">View Room</a>
-</div>
+<p>Good choice for longer stays.</p>
+<a class="btn" target="_blank"
+href="https://www.airbnb.co.uk/h/mahadevniwas6">View Listing</a>
 </div>
 
 </div>
 </div>
 </section>
 
-<!-- REVIEWS -->
 <section>
 <div class="container">
-<h2>What Guests Say</h2>
+<h2>Amenities</h2>
+<div class="amenities">
+<div>AC Rooms</div>
+<div>Free WiFi</div>
+<div>Kitchen in Rooms</div>
+<div>Hot Water</div>
+<div>Inverter Backup</div>
+<div>On-street Parking</div>
+<div>Scooty Rental Help</div>
+<div>Laundry on Request</div>
+</div>
+</div>
+</section>
 
-<div class="reviews">
-<div class="review">“Felt like home. Piyush helped with itinerary & travel.” ⭐⭐⭐⭐⭐</div>
-<div class="review">“Clean rooms, peaceful area & great hospitality.” ⭐⭐⭐⭐⭐</div>
-<div class="review">“Perfect stay for Kashi Darshan.” ⭐⭐⭐⭐⭐</div>
+<section>
+<div class="container booster">
+<h2>Why families choose Mahadev Niwas over hotels near ghats</h2>
+<ul>
+<li>Peaceful residential stay away from crowd noise</li>
+<li>Ground floor – easy for elders</li>
+<li>Bigger rooms than ghat hotels</li>
+<li>Kitchen inside rooms</li>
+<li>Local guidance & transport help</li>
+<li>Better price than hotels</li>
+</ul>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Guest Reviews</h2>
+
+<div class="rooms-grid">
+<div class="review">
+“Peaceful homestay, perfect for Kashi Darshan. Host very helpful.”
+</div>
+
+<div class="review">
+“Clean rooms, safe area, easy travel to ghats.”
+</div>
+
+<div class="review">
+“Felt like staying with family, not hotel.”
+</div>
 </div>
 
 </div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
-<h2>Plan Your Kashi Trip Now</h2>
-<p>Message directly for best price & availability.</p>
+<section>
+<div class="container contact">
 
-<a href="https://wa.me/919876954987" target="_blank">
-Book Direct on WhatsApp
+<div>
+<h2>Contact & Booking</h2>
+<p>WhatsApp or call directly for best price.</p>
+<br>
+<a class="btn" target="_blank"
+href="https://wa.me/919876954987">
+Chat on WhatsApp
 </a>
+</div>
+
+<div>
+<iframe
+src="https://maps.google.com/maps?q=25.29930407822198,82.99047564015967&z=15&output=embed">
+</iframe>
+</div>
+
+</div>
 </section>
 
 <footer>
-Mahadev Niwas Homestay · Varanasi · Your Home in Kashi
+Mahadev Niwas Homestay · Varanasi
 </footer>
 
 </body>
