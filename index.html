@@ -16,7 +16,9 @@
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&family=Noto+Sans+Devanagari:wght@400;600&display=swap">
+<link rel="preload" as="image" href="images/rooms/r6-1-800.webp" imagesrcset="images/rooms/r6-1-800.webp 800w, images/rooms/r6-1-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&family=Noto+Sans+Devanagari:wght@400;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&family=Noto+Sans+Devanagari:wght@400;600&display=swap"></noscript>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LodgingBusiness","name":"Mahadev Niwas Homestay","url":"https://mahadevniwas.com/","image":"https://mahadevniwas.com/images/rooms/r4-1-1600.webp","telephone":"+919876954987","description":"Family-run homestay with six ground-floor rooms in a quiet residential colony in Kamachha, Varanasi.","address":{"@type":"PostalAddress","streetAddress":"N-16/95A-29B, Ganpati Dham Colony, Kolhua, Vinayaka, Kamachha, near Winsome Vinayaka, opp. Rewat Apartment-2","addressLocality":"Varanasi","addressRegion":"Uttar Pradesh","postalCode":"221010","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":25.2993332,"longitude":82.990422},"hasMap":"https://www.google.com/maps/search/?api=1&query=Mahadev%20Niwas%20Homestay%20Varanasi&query_place_id=ChIJb8FObMUzjjkR2Ujl2fwREmU","checkinTime":"12:00","checkoutTime":"10:00","numberOfRooms":6,"petsAllowed":false,"smokingAllowed":true,"availableLanguage":["English","Hindi"],"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Air conditioning (5 rooms)","value":true},{"@type":"LocationFeatureSpecification","name":"Private kitchen (5 rooms)","value":true},{"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true},{"@type":"LocationFeatureSpecification","name":"Hot water","value":true},{"@type":"LocationFeatureSpecification","name":"Inverter power backup","value":true},{"@type":"LocationFeatureSpecification","name":"Roadside parking","value":true}],"sameAs":["https://www.instagram.com/mahadev_niwas/"]}
@@ -37,7 +39,7 @@
 :root{
   --bg:#f7f6f3; --surface:#ffffff; --ink:#151a24; --muted:#5b6170; --line:#e3e0d8;
   --night:#0e1525; --night-2:#16203a; --on-night:#f3efe6; --on-night-muted:#b9b5ab;
-  --brass:#b7883b; --brass-hi:#d9ae62; --brass-ink:#1a1306;
+  --brass:#b7883b; --brass-hi:#d9ae62; --brass-ink:#1a1306; --brass-text:#86601f;
   --ok:#1f7a4d;
   --display:"Cormorant", "Cormorant Garamond", Georgia, serif;
   --body:"Manrope", "Segoe UI", system-ui, sans-serif;
@@ -47,10 +49,10 @@
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0c111c; --surface:#141b2a; --ink:#ece8de; --muted:#a8a69f; --line:#262f42;
-  --night:#070b14; --night-2:#101829; --brass:#d2a457; --brass-hi:#e6bf78; --ok:#4fc98a; color-scheme:dark}}
+  --night:#070b14; --night-2:#101829; --brass:#d2a457; --brass-hi:#e6bf78; --brass-text:#e0b56a; --ok:#4fc98a; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0c111c; --surface:#141b2a; --ink:#ece8de; --muted:#a8a69f; --line:#262f42;
-  --night:#070b14; --night-2:#101829; --brass:#d2a457; --brass-hi:#e6bf78; --ok:#4fc98a; color-scheme:dark}
+  --night:#070b14; --night-2:#101829; --brass:#d2a457; --brass-hi:#e6bf78; --brass-text:#e0b56a; --ok:#4fc98a; color-scheme:dark}
 
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -69,7 +71,8 @@ html[lang="hi"] h3{font-size:1.1rem}
 p{margin:0}
 .wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 section{padding-block:clamp(44px,6vw,80px)}
-.eyebrow{display:flex;align-items:center;gap:12px;font:600 .74rem/1 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:16px}
+.eyebrow{display:flex;align-items:center;gap:12px;font:600 .74rem/1 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--brass-text);margin-bottom:16px}
+.hero .eyebrow,.deepawali .eyebrow{color:var(--brass-hi)}
 .eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
 html[lang="hi"] .eyebrow{letter-spacing:.04em;font-size:.85rem;font-family:var(--deva-body)}
 .lede{color:var(--muted);max-width:60ch;margin-top:12px;font-size:.92rem}
@@ -163,7 +166,7 @@ html[lang="hi"] .hero h1 em{font-style:normal}
 .count{position:absolute;right:12px;bottom:12px;background:rgba(14,21,37,.72);color:#fff;font-size:.78rem;padding:5px 11px;border-radius:999px;backdrop-filter:blur(6px)}
 .tag{position:absolute;left:12px;top:12px;background:var(--brass);color:var(--brass-ink);font-size:.74rem;font-weight:700;padding:5px 11px;border-radius:999px;letter-spacing:.02em}
 .room-body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
-.room-no{font:600 .72rem/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.room-no{font:600 .72rem/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--brass-text)}
 .specs{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.84rem;margin:0;padding-block:12px;border-block:1px solid var(--line)}
 .specs dt{color:var(--muted)}
 .specs dd{margin:0;font-weight:600}
@@ -248,7 +251,7 @@ html[lang="hi"] .host blockquote{font-family:var(--deva-display);font-style:norm
 .loc{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:36px;align-items:start}
 @media(max-width:820px){.loc{grid-template-columns:1fr}}
 address{font-style:normal;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:10px}
-address .label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);font-weight:600}
+address .label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-text);font-weight:600}
 html[lang="hi"] address .label{letter-spacing:0;font-size:.85rem}
 .select{user-select:all;font-weight:600}
 
@@ -259,7 +262,7 @@ html[lang="hi"] address .label{letter-spacing:0;font-size:.85rem}
 .long-photo img{width:100%;height:100%;object-fit:cover}
 .discounts{display:flex;gap:16px;margin-top:24px;flex-wrap:wrap}
 .disc{flex:1 1 140px;border:1px solid var(--line);border-radius:var(--r);padding:18px;background:var(--surface)}
-.disc b{display:block;font:600 1.9rem/1 var(--display);color:var(--brass)}
+.disc b{display:block;font:600 1.9rem/1 var(--display);color:var(--brass-text)}
 .disc span{color:var(--muted);font-size:.9rem}
 
 /* rules */
@@ -283,7 +286,7 @@ details{border-bottom:1px solid var(--line)}
 summary{cursor:pointer;padding:14px 0;font:600 1.12rem/1.3 var(--display);list-style:none;display:flex;justify-content:space-between;gap:16px}
 html[lang="hi"] summary{font-family:var(--deva-display);font-size:1.1rem}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--brass);font:400 1.6rem/1 var(--body);transition:transform .3s var(--ease)}
+summary::after{content:"+";color:var(--brass-text);font:400 1.6rem/1 var(--body);transition:transform .3s var(--ease)}
 details[open] summary::after{transform:rotate(45deg)}
 details p{padding:0 0 14px;color:var(--muted);max-width:65ch;font-size:.88rem}
 
@@ -291,7 +294,7 @@ footer{background:var(--night);color:var(--on-night-muted);padding-block:44px 11
 footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
 @media(max-width:820px){footer .wrap{grid-template-columns:1fr}}
 footer .brand b{color:var(--on-night)}
-footer h4{margin:0 0 10px;font:600 .72rem/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--brass-hi)}
+footer .fh{margin:0 0 10px;font:600 .72rem/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--brass-hi)}
 footer a{color:var(--on-night)}
 
 /* sticky mobile bar */
@@ -657,11 +660,11 @@ footer a{color:var(--on-night)}
       <p style="margin-top:12px" data-hi="कमच्छा, वाराणसी में परिवार द्वारा संचालित होमस्टे।">A family-run homestay in Kamachha, Varanasi.</p>
     </div>
     <div>
-      <h4 data-hi="पता">Address</h4>
+      <p class="fh" data-hi="पता">Address</p>
       <p>N-16/95A-29B, Ganpati Dham Colony, Kolhua, Vinayaka, Kamachha, Varanasi 221010</p>
     </div>
     <div>
-      <h4 data-hi="संपर्क">Contact</h4>
+      <p class="fh" data-hi="संपर्क">Contact</p>
       <p>+91 98769 54987<br><a href="https://www.instagram.com/mahadev_niwas/" target="_blank" rel="noopener">@mahadev_niwas</a></p>
     </div>
   </div>
