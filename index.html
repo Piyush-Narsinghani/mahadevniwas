@@ -358,7 +358,7 @@ footer a{color:var(--on-night)}
 
     <div class="rooms">
       <article class="room reveal">
-        <button class="room-photo" data-gallery="r3" data-count="5" aria-label="Open Room 3 photos"><img src="images/rooms/r3-1-800.webp" width="800" height="450" loading="lazy" alt="Room 3 with king bed and seating area"><span class="tag" data-hi="प्रोजेक्टर">Projector</span><span class="count" data-hi="5 फ़ोटो">5 photos</span></button>
+        <button class="room-photo" data-gallery="r3" data-count="5" data-imgs="https://a0.muscache.com/im/pictures/hosting/Hosting-1337026475284159269/original/c2120365-d42b-486c-9cfe-e38f2adf693f.png?im_w=1200,https://a0.muscache.com/im/pictures/hosting/Hosting-1337026475284159269/original/a47d39a3-ddf3-4a15-bafa-86ecf05168f5.jpeg?im_w=1200,https://a0.muscache.com/im/pictures/hosting/Hosting-1337026475284159269/original/3ec584d5-a433-4357-9e0a-cc81ff760220.jpeg?im_w=1200,https://a0.muscache.com/im/pictures/hosting/Hosting-1337026475284159269/original/f16bca2b-bfc0-4da8-9d62-973936c7b8a4.jpeg?im_w=1200,https://a0.muscache.com/im/pictures/hosting/Hosting-1337026475284159269/original/e738854d-0281-4080-a131-a8fbfe72205f.jpeg?im_w=1200" aria-label="Open Room 3 photos"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1337026475284159269/original/c2120365-d42b-486c-9cfe-e38f2adf693f.png?im_w=720" srcset="https://a0.muscache.com/im/pictures/hosting/Hosting-1337026475284159269/original/c2120365-d42b-486c-9cfe-e38f2adf693f.png?im_w=720 720w, https://a0.muscache.com/im/pictures/hosting/Hosting-1337026475284159269/original/c2120365-d42b-486c-9cfe-e38f2adf693f.png?im_w=1200 1200w" sizes="(max-width:640px) 100vw, 33vw" width="720" height="540" loading="lazy" referrerpolicy="no-referrer" alt="Room 3 with one king-size bed"><span class="tag" data-hi="प्रोजेक्टर">Projector</span><span class="count" data-hi="5 फ़ोटो">5 photos</span></button>
         <div class="room-body">
           <span class="room-no" data-hi="कमरा 3">Room 3</span>
           <h3 data-hi="किंग AC सुइट, प्रोजेक्टर के साथ">King AC Suite with Projector</h3>
@@ -460,7 +460,7 @@ footer a{color:var(--on-night)}
 
 <section id="host" style="padding-top:0">
   <div class="wrap host">
-    <figure class="host-photo reveal" style="margin:0"><img src="images/rooms/entrance-1-1600.webp" loading="lazy" width="900" height="1600" alt="Mahadev Niwas board and plants at the entrance"></figure>
+    <figure class="host-photo reveal" style="margin:0"><img src="https://a0.muscache.com/im/pictures/user/User/original/2167c713-fce4-494c-b78b-8312ff85b413.jpeg?im_w=720" loading="lazy" width="720" height="960" referrerpolicy="no-referrer" alt="Piyush, host of Mahadev Niwas"></figure>
     <div class="reveal s2">
       <p class="eyebrow" data-hi="आपके होस्ट">Your host</p>
       <h2 data-hi="पीयूष और परिवार द्वारा संचालित">Run by Piyush and family</h2>
@@ -648,7 +648,7 @@ footer a{color:var(--on-night)}
 
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Room photos">
   <button class="close" id="lb-close" aria-label="Close photos">✕</button>
-  <img id="lb-img" alt="">
+  <img id="lb-img" alt="" referrerpolicy="no-referrer">
   <div class="lb-bar"><button id="lb-prev" aria-label="Previous photo">‹</button><span id="lb-pos"></span><button id="lb-next" aria-label="Next photo">›</button></div>
 </div>
 
@@ -675,8 +675,9 @@ footer a{color:var(--on-night)}
   /* Lightbox */
   var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),pos=document.getElementById('lb-pos');
   var key='',n=0,i=1,last=null;
-  function show(){img.style.animation='none';img.offsetHeight;img.style.animation='';img.src='images/rooms/'+key+'-'+i+'-1600.webp';img.alt=key.replace('r','Room ')+' photo '+i+' of '+n;pos.textContent=i+' / '+n;}
-  function open(k,c,btn){key=k;n=c;i=1;last=btn;show();lb.hidden=false;document.getElementById('lb-close').focus();}
+  var list=null;
+  function show(){img.style.animation='none';img.offsetHeight;img.style.animation='';img.src=list?list[i-1]:'images/rooms/'+key+'-'+i+'-1600.webp';img.alt=key.replace('r','Room ')+' photo '+i+' of '+n;pos.textContent=i+' / '+n;}
+  function open(k,c,btn){key=k;list=btn.dataset.imgs?btn.dataset.imgs.split(','):null;n=list?list.length:c;i=1;last=btn;show();lb.hidden=false;document.getElementById('lb-close').focus();}
   function close(){lb.hidden=true;if(last)last.focus();}
   function step(d){i=(i-1+d+n)%n+1;show();}
   document.querySelectorAll('[data-gallery]').forEach(function(b){b.addEventListener('click',function(){open(b.dataset.gallery,+b.dataset.count,b);});});
