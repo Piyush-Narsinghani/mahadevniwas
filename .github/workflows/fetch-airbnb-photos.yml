@@ -16,7 +16,15 @@ jobs:
           mkdir -p images/airbnb
           while read -r name url; do
             [ -z "$name" ] && continue
-            curl -fsSL "${url}?im_w=1600" -o "/tmp/$name.src"
+            UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+            ok=""
+            for u in "${url}?im_w=1600" "${url}?im_w=1200" "${url}"; do
+              code=$(curl -sSL -A "$UA" -e "https://www.airbnb.co.in/" -H "Accept: image/avif,image/webp,image/*,*/*" -o "/tmp/$name.src" -w "%{http_code}" "$u" || true)
+              echo "$name $code $u"
+              if [ "$code" = "200" ]; then ok=1; break; fi
+            done
+            [ -z "$ok" ] && { echo "FAILED $name"; continue; }
+            file "/tmp/$name.src"
             cwebp -quiet -q 76 -resize 1600 0 "/tmp/$name.src" -o "images/airbnb/$name-1600.webp"
             cwebp -quiet -q 74 -resize 800 0 "/tmp/$name.src" -o "images/airbnb/$name-800.webp"
           done < .github/airbnb-photos.txt
