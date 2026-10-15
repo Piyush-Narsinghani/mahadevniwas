@@ -10,25 +10,41 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
       - name: Download and convert photos
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq webp >/dev/null
-          mkdir -p images/airbnb
-          while read -r name url; do
-            [ -z "$name" ] && continue
-            UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
-            ok=""
-            for u in "${url}?im_w=1600" "${url}?im_w=1200" "${url}"; do
-              code=$(curl -sSL -A "$UA" -e "https://www.airbnb.co.in/" -H "Accept: image/avif,image/webp,image/*,*/*" -o "/tmp/$name.src" -w "%{http_code}" "$u" || true)
-              echo "$name $code $u"
-              if [ "$code" = "200" ]; then ok=1; break; fi
-            done
-            [ -z "$ok" ] && { echo "FAILED $name"; continue; }
-            file "/tmp/$name.src"
-            cwebp -quiet -q 76 -resize 1600 0 "/tmp/$name.src" -o "images/airbnb/$name-1600.webp"
-            cwebp -quiet -q 74 -resize 800 0 "/tmp/$name.src" -o "images/airbnb/$name-800.webp"
-          done < .github/airbnb-photos.txt
-          ls -la images/airbnb
+          pip install -q pillow pillow-avif-plugin requests
+          python - <<'PY'
+          import io, os, requests
+          from PIL import Image, ImageOps
+          try:
+              import pillow_avif  # noqa
+          except Exception: pass
+          os.makedirs('images/airbnb', exist_ok=True)
+          log=[]
+          H={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
+             'Referer':'https://www.airbnb.co.in/','Accept':'image/jpeg,image/png,image/*;q=0.8'}
+          for line in open('.github/airbnb-photos.txt'):
+              parts=line.split()
+              if len(parts)!=2 or line.startswith('#'): continue
+              name,url=parts
+              done=False
+              for u in (url+'?im_w=1600', url+'?im_w=1200', url):
+                  try:
+                      r=requests.get(u,headers=H,timeout=30)
+                      log.append(f'{name} {r.status_code} {r.headers.get("content-type")} {len(r.content)} {u}')
+                      if r.status_code!=200: continue
+                      im=ImageOps.exif_transpose(Image.open(io.BytesIO(r.content))).convert('RGB')
+                      for w,q in ((1600,76),(800,74)):
+                          c=im.copy(); c.thumbnail((w,w)); c.save(f'images/airbnb/{name}-{w}.webp','WEBP',quality=q,method=6)
+                      done=True; break
+                  except Exception as e:
+                      log.append(f'{name} ERROR {e!r} {u}')
+              if not done: log.append(f'FAILED {name}')
+          open('images/airbnb/fetch-log.txt','w').write('\n'.join(log)+'\n')
+          print('\n'.join(log))
+          PY
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
