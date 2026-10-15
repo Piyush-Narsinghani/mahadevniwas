@@ -1,0 +1,30 @@
+name: Save Airbnb photos into the site
+on:
+  push:
+    paths: ['.github/airbnb-photos.txt']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and convert photos
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq webp >/dev/null
+          mkdir -p images/airbnb
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            curl -fsSL "${url}?im_w=1600" -o "/tmp/$name.src"
+            cwebp -quiet -q 76 -resize 1600 0 "/tmp/$name.src" -o "images/airbnb/$name-1600.webp"
+            cwebp -quiet -q 74 -resize 800 0 "/tmp/$name.src" -o "images/airbnb/$name-800.webp"
+          done < .github/airbnb-photos.txt
+          ls -la images/airbnb
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/airbnb
+          git diff --cached --quiet || git commit -m "Save Airbnb photos into the site"
+          git push
