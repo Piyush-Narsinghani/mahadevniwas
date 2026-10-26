@@ -1,0 +1,54 @@
+name: Save Drive photos for review
+on:
+  push:
+    paths: ['.github/drive-photos.txt']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Download and convert photos
+        run: |
+          pip install -q pillow requests
+          python - <<'PY'
+          import io, os, requests
+          from PIL import Image, ImageOps, ImageDraw
+          log=[]; sheets={}
+          for line in open('.github/drive-photos.txt'):
+              p=line.split()
+              if len(p)!=3 or line.startswith('#'): continue
+              room,name,fid=p
+              out=f'images/drive/{room}'; os.makedirs(out,exist_ok=True)
+              try:
+                  r=requests.get('https://drive.usercontent.google.com/download',params={'id':fid,'export':'download','confirm':'t'},timeout=120)
+                  im=ImageOps.exif_transpose(Image.open(io.BytesIO(r.content))).convert('RGB')
+                  log.append(f'{room} {name} {r.status_code} {len(r.content)} {im.size}')
+                  for w,q in ((1600,78),(800,76)):
+                      c=im.copy(); c.thumbnail((w,w)); c.save(f'{out}/{name}-{w}.webp','WEBP',quality=q,method=6)
+                  t=im.copy(); t.thumbnail((420,420)); sheets.setdefault(room,[]).append((name,t))
+              except Exception as e:
+                  log.append(f'FAILED {room} {name} {e!r}')
+          os.makedirs('images/drive/_sheets',exist_ok=True)
+          for room,items in sheets.items():
+              cols=4; cw,ch=430,350
+              for k in range(0,len(items),12):
+                  chunk=items[k:k+12]; rows=(len(chunk)+cols-1)//cols
+                  S=Image.new('RGB',(cols*cw,rows*ch),'white'); d=ImageDraw.Draw(S)
+                  for i,(n,t) in enumerate(chunk):
+                      x,y=(i%cols)*cw,(i//cols)*ch
+                      S.paste(t,(x+5,y+5)); d.rectangle([x+5,y+5,x+95,y+35],fill='black'); d.text((x+12,y+12),n,fill='yellow')
+                  S.save(f'images/drive/_sheets/{room}-{k//12+1}.jpg',quality=82)
+          open('images/drive/fetch-log.txt','w').write('\n'.join(log)+'\n'); print('\n'.join(log))
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/drive
+          git diff --cached --quiet || git commit -m "Save Drive photos for review"
+          git push
