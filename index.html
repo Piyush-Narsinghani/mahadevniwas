@@ -32,7 +32,7 @@
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="images/rooms/r3-n8-800.webp" imagesrcset="images/rooms/r3-n8-800.webp 800w, images/rooms/r3-n8-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="images/rooms/r3-n1-800.webp" imagesrcset="images/rooms/r3-n1-800.webp 800w, images/rooms/r3-n1-1600.webp 1600w" imagesizes="(min-width:900px) 50vw, 100vw" fetchpriority="high">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;600&family=Tiro+Devanagari+Hindi&family=Noto+Sans+Devanagari:wght@400;600&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;600&family=Tiro+Devanagari+Hindi&family=Noto+Sans+Devanagari:wght@400;600&display=swap"></noscript>
 
@@ -331,6 +331,25 @@ footer a{color:var(--on-night)}
   .line-in{background-image:linear-gradient(var(--brass),var(--brass));background-repeat:no-repeat;background-size:0 1px;background-position:0 100%;transition:background-size 1s var(--ease)}
   .line-in.in{background-size:100% 1px}
 }
+
+/* Hero v2: photo shown clearly in a frame instead of a darkened full-bleed background */
+.hero-bg img{object-position:58% 50%}
+@keyframes slide2{0%{opacity:0;transform:scale(1.04)}4%{opacity:1}20%{opacity:1}24%{opacity:0;transform:scale(1)}100%{opacity:0}}
+.hero-bg img{animation-name:slide2}
+@media(min-width:900px){
+  .hero{align-items:center;min-height:min(90vh,800px);padding-block:calc(104px + env(safe-area-inset-top,0px)) 48px}
+  .hero .wrap>*{max-width:min(540px,46%)}
+  .hero .hero-rooms{max-width:min(540px,46%);gap:8px}
+  .hero .hr{width:calc((100% - 40px)/6);height:auto;aspect-ratio:4/3}
+  .hero-bg{inset:auto;top:calc(96px + env(safe-area-inset-top,0px));bottom:48px;left:calc(50% + 8px);right:max(16px,calc((100vw - 1160px)/2 + 16px));border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06)}
+  .hero-bg::after{background:linear-gradient(0deg,rgba(14,21,37,.28),transparent 30%)}
+}
+@media(max-width:899px){
+  .hero{display:block;min-height:0;padding-block:0 32px}
+  .hero-bg{position:relative;inset:auto;height:min(58vh,460px);min-height:300px}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(14,21,37,.55) 0%,rgba(14,21,37,0) 26%,rgba(14,21,37,0) 62%,var(--night) 100%)}
+  .hero>.wrap{margin-top:-28px}
+}
 </style>
 </head>
 <body>
@@ -353,7 +372,7 @@ footer a{color:var(--on-night)}
 
 <main id="top">
 <section class="hero">
-  <div class="hero-bg" aria-hidden="true"><img src="images/rooms/r3-n8-1600.webp" srcset="images/rooms/r3-n8-800.webp 800w, images/rooms/r3-n8-1600.webp 1600w" sizes="100vw" alt="" fetchpriority="high"><img data-src="images/rooms/r3-n1-1600.webp" alt=""><img data-src="images/rooms/r6-n1-1600.webp" alt=""><img data-src="images/rooms/r3-n3-1600.webp" alt=""><img data-src="images/rooms/r3-n2-1600.webp" alt=""></div>
+  <div class="hero-bg" aria-hidden="true"><img src="images/rooms/r3-n1-1600.webp" srcset="images/rooms/r3-n1-800.webp 800w, images/rooms/r3-n1-1600.webp 1600w" sizes="(min-width:900px) 50vw, 100vw" alt="" fetchpriority="high"><img data-src="images/rooms/r3-n3-1600.webp" alt="" style="object-position:12% 50%"><img data-src="images/rooms/r6-n1-1600.webp" alt=""><img data-src="images/rooms/r3-n8-1600.webp" alt=""><img data-src="images/rooms/r6-n7-1600.webp" alt=""></div>
   <div class="wrap">
     <p class="eyebrow rise" data-hi="होमस्टे · कमच्छा, वाराणसी">Homestay · Kamachha, Varanasi</p>
     <h1 class="rise d1" data-hi="शांत कॉलोनी में, <em>अपनी रसोई</em> वाले कमरे">Quiet rooms in Kashi, <em>with your own kitchen</em></h1>
