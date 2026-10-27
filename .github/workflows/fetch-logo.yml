@@ -1,0 +1,19 @@
+name: Fetch logo
+on:
+  push:
+    branches: [bts-media]
+    paths: [bts/logo-id.txt]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          id=$(cat bts/logo-id.txt)
+          curl -sSL -o bts/logo-original.jpg "https://drive.usercontent.google.com/download?id=$id&export=download&confirm=t"
+          file bts/logo-original.jpg; ls -l bts/logo-original.jpg
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bts/logo-original.jpg && git commit -m "Add original logo" && git push
