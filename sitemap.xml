@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://mahadevniwas.com/</loc><lastmod>2026-10-27</lastmod>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://mahadevniwas.com/</loc><lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mahadevniwas.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mahadevniwas.com/hi"/>
     <image:image><image:loc>https://mahadevniwas.com/images/rooms/r3-n1-1600.webp</image:loc></image:image>
     <image:image><image:loc>https://mahadevniwas.com/images/rooms/r4-1-1600.webp</image:loc></image:image>
     <image:image><image:loc>https://mahadevniwas.com/images/rooms/r6-n7-1600.webp</image:loc></image:image>
@@ -10,7 +12,73 @@
     <image:image><image:loc>https://mahadevniwas.com/images/rooms/r3-n4-1600.webp</image:loc></image:image>
     <image:image><image:loc>https://mahadevniwas.com/images/rooms/r6-n2-1600.webp</image:loc></image:image>
   </url>
-  <url><loc>https://mahadevniwas.com/dev-deepawali-2026</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://mahadevniwas.com/long-stays</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://mahadevniwas.com/varanasi-2-day-itinerary</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://mahadevniwas.com/hi</loc><lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mahadevniwas.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mahadevniwas.com/hi"/>
+  </url>
+  <url><loc>https://mahadevniwas.com/king-ac-suite-varanasi</loc><lastmod>2026-11-05</lastmod>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r3-n1-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r3-n8-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r3-n3-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r3-n2-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/airbnb/r3-1-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/airbnb/r3-2-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/airbnb/r3-4-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/airbnb/r3-3-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r3-n4-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r3-n5-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r3-n7-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r3-n6-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/airbnb/r3-5-1600.webp</image:loc></image:image>
+  </url>
+  <url><loc>https://mahadevniwas.com/family-ac-suite-varanasi</loc><lastmod>2026-11-05</lastmod>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r4-1-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r4-3-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r4-2-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r4-5-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r4-4-1600.webp</image:loc></image:image>
+  </url>
+  <url><loc>https://mahadevniwas.com/roomy-ac-suite-varanasi</loc><lastmod>2026-11-05</lastmod>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r6-n7-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r6-3-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r6-2-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r6-n1-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r6-4-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r6-1-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r6-n2-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r6-n3-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r6-n4-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r6-n5-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r6-n6-1600.webp</image:loc></image:image>
+  </url>
+  <url><loc>https://mahadevniwas.com/compact-ac-room-varanasi</loc><lastmod>2026-11-05</lastmod>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r5-1-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r5-4-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r5-2-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r5-3-1600.webp</image:loc></image:image>
+  </url>
+  <url><loc>https://mahadevniwas.com/quiet-ac-suite-varanasi</loc><lastmod>2026-11-05</lastmod>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r1-1-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r1-3-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r1-2-1600.webp</image:loc></image:image>
+  </url>
+  <url><loc>https://mahadevniwas.com/budget-fan-room-varanasi</loc><lastmod>2026-11-05</lastmod>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r2-1-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r2-2-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r2-3-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r2-n2-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r2-n1-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r2-n3-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r2-n4-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://mahadevniwas.com/images/rooms/r2-n5-1600.webp</image:loc></image:image>
+  </url>
+  <url><loc>https://mahadevniwas.com/homestay-with-kitchen-varanasi</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://mahadevniwas.com/family-elderly-stay-varanasi</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://mahadevniwas.com/budget-rooms-varanasi</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://mahadevniwas.com/long-stays</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://mahadevniwas.com/kashi-vishwanath-darshan-timings</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://mahadevniwas.com/varanasi-2-day-itinerary</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://mahadevniwas.com/varanasi-3-day-itinerary</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://mahadevniwas.com/sarnath-half-day-trip</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://mahadevniwas.com/dev-deepawali-2026</loc><lastmod>2026-11-05</lastmod></url>
 </urlset>
