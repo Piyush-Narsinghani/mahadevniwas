@@ -92,6 +92,10 @@ footer p a{padding-block:3px}
   body:has(.mbar){padding-bottom:calc(70px + env(safe-area-inset-bottom,0px))}
   .hero-actions .btn{min-height:46px}
 }
+/* Nov 7 polish: host block aligns with other sections; times never wrap; bigger footer tap targets */
+.host-solo{max-width:1160px}.host-solo>div{max-width:760px}
+.rows li span:last-child{white-space:nowrap}.rows.steps li span:last-child{white-space:normal}
+@media(max-width:720px){footer a:not(.brand){display:inline-block;padding-block:8px}footer p[style*="column"]{gap:0!important}}
 </style>
 </head>
 <body>
