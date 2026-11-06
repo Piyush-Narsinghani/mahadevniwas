@@ -84,6 +84,21 @@ footer p a{padding-block:3px}
 .rows li span:last-child{white-space:nowrap}.rows.steps li span:last-child{white-space:normal}
 @media(max-width:720px){footer a:not(.brand){display:inline-block;padding-block:8px}footer p[style*="column"]{gap:0!important}}
 </style>
+<style id="mn-footer">
+footer.ft{padding-block:56px 28px}
+footer.ft .wrap.ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1.1fr 1.1fr 1.3fr;gap:40px;align-items:start}
+footer.ft .ft-brand p{margin:14px 0 18px;max-width:300px;line-height:1.6}
+footer.ft .ft-cta{display:flex;gap:10px;flex-wrap:wrap}
+footer.ft a.ft-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 18px;border:1px solid rgba(255,255,255,.25);border-radius:999px;text-decoration:none;font-weight:600}
+footer.ft a.ft-btn.ft-wa{background:#1f7a4d;border-color:#1f7a4d;color:#fff}
+footer.ft ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+footer.ft li a{display:inline-block;padding-block:6px;text-decoration:none;color:var(--on-night-muted)}
+footer.ft li a:hover{color:var(--on-night);text-decoration:underline}
+footer.ft .ft-addr{margin:0 0 8px;line-height:1.6}
+footer.ft .ft-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:44px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:.78rem}
+@media(max-width:1000px){footer.ft .wrap.ft-grid{grid-template-columns:repeat(3,1fr)}footer.ft .ft-brand{grid-column:1/-1}}
+@media(max-width:640px){footer.ft .wrap.ft-grid{grid-template-columns:1fr 1fr;gap:28px 20px}footer.ft .ft-col:nth-child(4),footer.ft .ft-col:last-child{grid-column:1/-1}footer.ft .ft-col:nth-child(4) ul{grid-template-columns:1fr 1fr;column-gap:20px}footer.ft li a{padding-block:9px}footer.ft{padding-bottom:32px}}
+</style>
 </head>
 <body>
 <header><div class="wrap nav"><a class="brand" href="/" style="display:inline-flex;align-items:center;gap:10px"><img class="brand-logo" src="/images/logo-112.webp" width="44" height="44" alt="Mahadev Niwas logo" decoding="async">Mahadev Niwas<span>महादेव निवास</span></a><a class="btn btn-brass" href="/#rooms">See rooms</a></div></header>
@@ -112,10 +127,23 @@ footer p a{padding-block:3px}
 <h2>Your data</h2>
 <p>We keep your name, email, WhatsApp number and booking dates only to manage your stay, and we never sell or share them. Ask us on WhatsApp at any time to delete your details.</p>
 </main>
-<footer><div class="wrap">
-<p><b style="color:var(--on-night)">Mahadev Niwas Homestay</b> · N-16/95A-29B, Ganpati Dham Colony, Kolhua, Vinayaka, Kamachha, Varanasi 221010 · <a href="tel:+919876954987">+91 98769 54987</a></p>
-<p style="margin-top:8px">Rooms: <a href="/king-ac-suite-varanasi">King AC Suite</a> · <a href="/family-ac-suite-varanasi">Family AC Suite</a> · <a href="/roomy-ac-suite-varanasi">Roomy AC Suite</a> · <a href="/compact-ac-room-varanasi">Compact AC Room</a> · <a href="/quiet-ac-suite-varanasi">Quiet AC Suite</a> · <a href="/budget-fan-room-varanasi">Budget Fan Room</a></p>
-<div class="links"><a href="/">Home</a><a href="/homestay-with-kitchen-varanasi">Homestay with a kitchen</a><a href="/family-elderly-stay-varanasi">Families and elderly guests</a><a href="/budget-rooms-varanasi">Budget rooms in Varanasi</a><a href="/long-stays">Long and monthly stays</a><a href="/kashi-vishwanath-darshan-timings">Kashi Vishwanath timings</a><a href="/varanasi-2-day-itinerary">2-day Varanasi itinerary</a><a href="/varanasi-3-day-itinerary">3-day Varanasi itinerary</a><a href="/dev-deepawali-2026">Dev Deepawali 2026</a><a href="https://maps.google.com/?cid=7282903325096626393" target="_blank" rel="noopener">Google Maps</a></div>
-</div></footer>
+<footer class="ft">
+  <div class="wrap ft-grid">
+    <div class="ft-brand">
+      <a class="brand" href="/"><img class="brand-logo" src="/images/logo-112.webp" width="40" height="40" alt="" decoding="async"><b>Mahadev Niwas</b></a>
+      <p data-hi="कमच्छा, वाराणसी में परिवार द्वारा संचालित होमस्टे। 7× Airbnb सुपरहोस्ट।">A family-run homestay in a quiet Kamachha colony, Varanasi. 7× Airbnb Superhost.</p>
+      <div class="ft-cta"><a class="ft-btn ft-wa" href="https://wa.me/919876954987" target="_blank" rel="noopener">WhatsApp</a><a class="ft-btn" href="tel:+919876954987" data-hi="कॉल करें">Call</a></div>
+    </div>
+    <nav class="ft-col" aria-label="Rooms"><p class="fh" data-hi="कमरे">Rooms</p><ul><li><a href="/king-ac-suite-varanasi" data-hi="किंग एसी सुइट">King AC Suite</a></li><li><a href="/family-ac-suite-varanasi" data-hi="फ़ैमिली एसी सुइट">Family AC Suite</a></li><li><a href="/roomy-ac-suite-varanasi" data-hi="बड़ा एसी सुइट">Roomy AC Suite</a></li><li><a href="/compact-ac-room-varanasi" data-hi="कॉम्पैक्ट एसी रूम">Compact AC Room</a></li><li><a href="/quiet-ac-suite-varanasi" data-hi="शांत एसी सुइट">Quiet AC Suite</a></li><li><a href="/budget-fan-room-varanasi" data-hi="बजट फ़ैन रूम">Budget Fan Room</a></li></ul></nav>
+    <nav class="ft-col" aria-label="Stay"><p class="fh" data-hi="ठहराव">Stay</p><ul><li><a href="/homestay-with-kitchen-varanasi" data-hi="किचन वाला होमस्टे">Homestay with a kitchen</a></li><li><a href="/family-elderly-stay-varanasi" data-hi="परिवार और बुज़ुर्ग">Families & elderly guests</a></li><li><a href="/budget-rooms-varanasi" data-hi="बजट कमरे">Budget rooms</a></li><li><a href="/long-stays" data-hi="लंबा ठहराव">Long & monthly stays</a></li><li><a href="/booking-policy" data-hi="बुकिंग नीति">Booking policy</a></li></ul></nav>
+    <nav class="ft-col" aria-label="Guides"><p class="fh" data-hi="गाइड">Kashi guides</p><ul><li><a href="/dev-deepawali-2026" data-hi="देव दीपावली 2026">Dev Deepawali 2026</a></li><li><a href="/kashi-vishwanath-darshan-timings" data-hi="काशी विश्वनाथ समय">Kashi Vishwanath timings</a></li><li><a href="/varanasi-2-day-itinerary" data-hi="2 दिन की यात्रा">2-day itinerary</a></li><li><a href="/varanasi-3-day-itinerary" data-hi="3 दिन की यात्रा">3-day itinerary</a></li><li><a href="/sarnath-half-day-trip" data-hi="सारनाथ आधे दिन की यात्रा">Sarnath half-day trip</a></li></ul></nav>
+    <div class="ft-col">
+      <p class="fh" data-hi="पता">Visit</p>
+      <p class="ft-addr">N-16/95A-29B, Ganpati Dham Colony, Kolhua, Vinayaka, Kamachha, Varanasi 221010</p>
+      <ul><li><a href="https://maps.google.com/?cid=7282903325096626393" target="_blank" rel="noopener" data-hi="Google Maps पर देखें">Open in Google Maps</a></li><li><a href="tel:+919876954987">+91 98769 54987</a></li><li><a href="https://www.instagram.com/mahadev_niwas/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/@MahadevNiwasHomestayVaranasi" target="_blank" rel="noopener">YouTube</a></li></ul>
+    </div>
+  </div>
+  <div class="wrap ft-bottom"><span>© 2026 Mahadev Niwas, Varanasi</span><span data-hi="हर हर महादेव">Har Har Mahadev</span></div>
+</footer>
 </body>
 </html>
