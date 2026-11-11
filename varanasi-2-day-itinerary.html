@@ -53,6 +53,38 @@ footer a{color:var(--on-night)}footer .links{display:flex;flex-wrap:wrap;gap:8px
 .brand{align-items:center!important}
 .brand-logo{width:44px;height:44px;border-radius:50%;flex:0 0 auto;margin-right:2px;box-shadow:0 0 0 1px rgba(232,182,92,.35)}
 @media(max-width:480px){.brand-logo{width:36px;height:36px}}
+
+/* contact & nav upgrades */
+.nav .call-pill{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border-radius:999px;background:var(--brass,#c9a05a);color:#1a1a1a;font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap}
+.nav .call-pill:hover{filter:brightness(1.06)}
+.nav .menu-btn{display:none;min-width:44px;min-height:44px;border-radius:10px;border:1px solid rgba(255,255,255,.3);background:transparent;color:inherit;font-size:1.25rem;cursor:pointer}
+.mmenu{position:fixed;inset:0;z-index:80;background:#0b1020;color:#fff;display:flex;flex-direction:column;padding:22px 20px calc(24px + env(safe-area-inset-bottom,0px));overflow:auto}
+.mmenu[hidden]{display:none}
+.mmenu .mm-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.mmenu .mm-close{min-width:44px;min-height:44px;border-radius:10px;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font-size:1.2rem;cursor:pointer}
+.mmenu a.mm-link{display:block;padding:12px 4px;font-size:1.1rem;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.12)}
+.mmenu .mm-cta{display:grid;gap:10px;margin-top:22px}
+.mmenu .mm-cta a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:12px;font-weight:700;text-decoration:none}
+.mm-call{background:var(--brass,#c9a05a);color:#1a1a1a}.mm-wa{background:#1f7a4d;color:#fff}.mm-em{border:1px solid rgba(255,255,255,.35);color:#fff}
+@media(max-width:860px){.nav .menu-btn{display:inline-flex;align-items:center;justify-content:center}.nav .call-pill .cp-txt{display:none}.nav .call-pill{padding:0 12px;min-width:44px;min-height:44px;justify-content:center}}
+#contact .ct-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+#contact .ct-card{display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:16px;border:1px solid rgba(0,0,0,.1);background:var(--card,#fff);text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+#contact a.ct-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+#contact .ct-k{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+#contact .ct-v{font-size:1.25rem;font-weight:700}
+#contact .ct-n{font-size:.88rem;opacity:.8;line-height:1.5}
+#contact .ct-go{margin-top:auto;padding-top:8px;font-weight:700;color:var(--brass-dk,#8a6420)}
+#contact .ct-card.wa .ct-go{color:#1f7a4d}
+#contact .ct-card.em{border-style:dashed}
+#contact .ct-addr{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:16px}
+#contact .ct-box{padding:20px;border-radius:16px;border:1px solid rgba(0,0,0,.1);background:var(--card,#fff)}
+#contact .ct-box p{margin:6px 0 12px;line-height:1.6}
+#contact .ct-btns{display:flex;gap:10px;flex-wrap:wrap}
+#contact .ct-btns button,#contact .ct-btns a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(0,0,0,.2);background:transparent;font:inherit;font-weight:600;color:inherit;text-decoration:none;cursor:pointer}
+#contact ul.ct-times{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:8px;line-height:1.5}
+@media(max-width:860px){#contact .ct-grid,#contact .ct-addr{grid-template-columns:1fr}}
+.mbar .btn-call{background:var(--brass,#c9a05a);color:#1a1a1a}
+@media(max-width:860px){.hnav .hn-c,.hnav .btn-brass{display:none}}
 </style>
 
 
@@ -102,7 +134,7 @@ footer.ft .ft-bottom{display:flex;justify-content:space-between;gap:16px;flex-wr
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="/" style="display:inline-flex;align-items:center;gap:10px"><img class="brand-logo" src="/images/logo-112.webp" width="44" height="44" alt="Mahadev Niwas logo" decoding="async">Mahadev Niwas<span>महादेव निवास</span></a><a class="btn btn-brass" href="/#rooms">See rooms</a></div></header>
+<header><div class="wrap nav"><a class="brand" href="/" style="display:inline-flex;align-items:center;gap:10px"><img class="brand-logo" src="/images/logo-112.webp" width="44" height="44" alt="Mahadev Niwas logo" decoding="async">Mahadev Niwas<span>महादेव निवास</span></a><nav class="hnav" aria-label="Main" style="display:flex;align-items:center;gap:12px"><a class="link hn-c" href="/#contact" style="text-decoration:none;font-weight:500">Contact</a><a class="btn btn-brass" href="/#rooms">See rooms</a><a class="call-pill" href="tel:+919876954987" aria-label="Call +91 98769 54987"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span class="cp-txt" data-hi="कॉल करें">Call us</span></a><button type="button" class="menu-btn" id="menu-btn" aria-label="Open menu" aria-controls="mmenu" aria-expanded="false">☰</button></nav></div></header>
 <section class="hero"><div class="wrap">
 <nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> › A 2-day Varanasi itinerary from a local host</nav>
 <p class="eyebrow">Plan your trip</p>
@@ -159,5 +191,6 @@ footer.ft .ft-bottom{display:flex;justify-content:space-between;gap:16px;flex-wr
   <div class="wrap ft-bottom"><span>© 2026 Mahadev Niwas, Varanasi</span><span data-hi="हर हर महादेव">Har Har Mahadev</span></div>
 </footer>
 <script>document.querySelectorAll('a[href^="https://wa.me"]').forEach(function(a){a.addEventListener('click',function(){if(window.gtag)gtag('event','whatsapp_click',{page:'varanasi-2-day-itinerary'});});});</script>
+<div class="mmenu" id="mmenu" hidden role="dialog" aria-modal="true" aria-label="Menu"><div class="mm-top"><b>Mahadev Niwas</b><button type="button" class="mm-close" id="mm-close" aria-label="Close menu">✕</button></div><a class="mm-link" href="/#rooms" data-hi="कमरे">Rooms</a><a class="mm-link" href="/#dev-deepawali" data-hi="देव दीपावली">Dev Deepawali</a><a class="mm-link" href="/#around" data-hi="घूमना-फिरना">Getting around</a><a class="mm-link" href="/#rules" data-hi="नियम">House rules</a><a class="mm-link" href="/#reviews" data-hi="समीक्षाएँ">Reviews</a><a class="mm-link" href="/#faq" data-hi="सवाल-जवाब">FAQ</a><a class="mm-link" href="/#contact" data-hi="संपर्क">Contact</a><div class="mm-cta"><a class="mm-call" href="tel:+919876954987"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span data-hi="पीयूष को कॉल करें">Call Piyush</span>&nbsp;+91 98769 54987</a><a class="mm-wa" href="https://wa.me/919876954987?text=Hi%2C%20I%20have%20a%20question%20about%20Mahadev%20Niwas" target="_blank" rel="noopener">WhatsApp</a><a class="mm-em" href="tel:+917985525065"><span data-hi="आपातकालीन:">Emergency:</span>+91 79855 25065</a></div></div><script>(function(){var m=document.getElementById('mmenu'),o=document.getElementById('menu-btn'),c=document.getElementById('mm-close');if(!m||!o)return;function op(){m.hidden=false;document.body.style.overflow='hidden';o.setAttribute('aria-expanded','true');c.focus()}function cl(){m.hidden=true;document.body.style.overflow='';o.setAttribute('aria-expanded','false')}o.onclick=op;c.onclick=cl;m.addEventListener('click',function(e){if(e.target.closest('a'))cl()});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden){cl();o.focus()}});})();</script>
 </body>
 </html>
