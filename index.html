@@ -443,6 +443,16 @@ footer.ft .ft-bottom{display:flex;justify-content:space-between;gap:16px;flex-wr
 @media(max-width:1000px){footer.ft .wrap.ft-grid{grid-template-columns:repeat(3,1fr)}footer.ft .ft-brand{grid-column:1/-1}}
 @media(max-width:640px){footer.ft .wrap.ft-grid{grid-template-columns:1fr 1fr;gap:28px 20px}footer.ft .ft-col:nth-child(4),footer.ft .ft-col:last-child{grid-column:1/-1}footer.ft .ft-col:nth-child(4) ul{grid-template-columns:1fr 1fr;column-gap:20px}footer.ft li a{padding-block:9px}footer.ft{padding-bottom:32px}}
 </style>
+<style id="mn-reels">
+.reels{padding-block:8px 40px}
+.reel-grid{display:grid;grid-template-columns:repeat(3,minmax(0,300px));gap:16px;margin-top:18px}
+@media(max-width:760px){.reel-grid{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;-webkit-overflow-scrolling:touch}.reel-grid figure{scroll-snap-align:start}}
+.reel-grid figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.reel-grid video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;background:var(--night)}
+.reel-grid figcaption{padding:12px 14px 14px}
+.reel-grid figcaption b{display:block;color:var(--ink)}
+.reel-grid figcaption small{color:var(--muted)}
+</style>
 </head>
 <body>
 
@@ -614,6 +624,19 @@ footer.ft .ft-bottom{display:flex;justify-content:space-between;gap:16px;flex-wr
       <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg><b data-hi="पार्किंग">Parking</b><span data-hi="कॉलोनी में मुफ़्त सड़क पार्किंग; ज़रूरत हो तो बगल में पेड पार्किंग">Free street parking; paid parking next door if needed</span></div>
       <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10l7-6 7 6v11"/><path d="M10 21v-6h4v6"/></svg><b data-hi="ग्राउंड फ़्लोर">Ground floor</b><span data-hi="बुज़ुर्गों के लिए आसान">Easy for elders</span></div>
     </div>
+  </div>
+</section>
+
+<section id="videos" class="reels" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow" data-hi="वीडियो">Videos</p>
+    <h2 class="reveal" data-hi="15 सेकंड में महादेव निवास देखें">See Mahadev Niwas in 15 seconds</h2>
+    <div class="reel-grid">
+    <figure class="reveal"><video controls playsinline preload="none" poster="/videos/reel-room-tour.webp" width="720" height="1280" aria-label="What's in your room"><source src="/videos/reel-room-tour.mp4" type="video/mp4"></video><figcaption><b data-hi="आपके कमरे में क्या है">What's in your room</b><small data-hi="15 सेकंड में कमरे की झलक">15-second room tour</small></figcaption></figure>
+    <figure class="reveal"><video controls playsinline preload="none" poster="/videos/reel-quiet-nights.webp" width="720" height="1280" aria-label="Quiet nights in Kashi"><source src="/videos/reel-quiet-nights.mp4" type="video/mp4"></video><figcaption><b data-hi="काशी की शांत रातें">Quiet nights in Kashi</b><small data-hi="शांत कॉलोनी, घाटों से 15–20 मिनट">A calm colony, 15–20 min from the ghats</small></figcaption></figure>
+    <figure class="reveal"><video controls playsinline preload="none" poster="/videos/reel-dev-deepawali.webp" width="720" height="1280" aria-label="Dev Deepawali stay"><source src="/videos/reel-dev-deepawali.mp4" type="video/mp4"></video><figcaption><b data-hi="देव दीपावली पर ठहराव">Dev Deepawali stay</b><small data-hi="21–26 नवंबर, कुछ कमरे उपलब्ध">21–26 Nov, a few rooms open</small></figcaption></figure>
+    </div>
+    <p style="margin-top:12px;color:var(--muted)"><a href="https://www.instagram.com/mahadev_niwas/" target="_blank" rel="noopener" data-hi="Instagram पर और वीडियो देखें →">More on Instagram →</a></p>
   </div>
 </section>
 
